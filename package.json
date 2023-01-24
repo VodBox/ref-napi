@@ -26,15 +26,13 @@
   "author": "Anna Henningsen <anna@addaleax.net>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/node-ffi-napi/ref-napi.git"
+    "url": "git://github.com/VodBox/ref-napi.git"
   },
   "main": "./lib/ref.js",
   "scripts": {
     "docs": "node docs/compile",
     "test": "nyc mocha --expose-gc",
-    "install": "node-gyp-build",
-    "prebuild": "prebuildify --napi --tag-armv",
-    "prepack": "prebuildify-ci download && ([ $(ls prebuilds | wc -l) = '5' ] || (echo 'Some prebuilds are missing'; exit 1))"
+    "install": "node-gyp-build"
   },
   "dependencies": {
     "debug": "^4.1.1",
