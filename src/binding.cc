@@ -12,6 +12,7 @@
   #define strtoull _strtoui64
   #define PRId64 "lld"
   #define PRIu64 "llu"
+  typedef intptr_t ssize_t;
 #else
   #ifndef __STDC_FORMAT_MACROS
     #define __STDC_FORMAT_MACROS
@@ -648,6 +649,7 @@ Object Init(Env env, Object exports) {
   SET_SIZEOF(ulonglong, unsigned long long);
   SET_SIZEOF(pointer, char *);
   SET_SIZEOF(size_t, size_t);
+  SET_SIZEOF(ssize_t, ssize_t);
   // size of a weak handle to a JS object
   SET_SIZEOF(Object, Reference<Object>);
 
@@ -679,6 +681,7 @@ Object Init(Env env, Object exports) {
   SET_ALIGNOF(ulonglong, unsigned long long);
   SET_ALIGNOF(pointer, char *);
   SET_ALIGNOF(size_t, size_t);
+  SET_ALIGNOF(ssize_t, ssize_t);
   SET_ALIGNOF(Object, Reference<Object>);
 
   // exports
